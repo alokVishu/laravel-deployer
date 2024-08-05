@@ -1,8 +1,11 @@
 <?php
 
+use Illuminate\Support\ServiceProvider;
+
 return [
 
     /*
+  /*
     |--------------------------------------------------------------------------
     | Application Name
     |--------------------------------------------------------------------------
@@ -16,6 +19,7 @@ return [
     'name' => env('APP_NAME', 'Laravel'),
 
     /*
+  /*
     |--------------------------------------------------------------------------
     | Application Environment
     |--------------------------------------------------------------------------
@@ -28,7 +32,10 @@ return [
 
     'env' => env('APP_ENV', 'production'),
 
+    'description' => env('APP_DESCRIPTION', ''),
+
     /*
+  /*
     |--------------------------------------------------------------------------
     | Application Debug Mode
     |--------------------------------------------------------------------------
@@ -42,6 +49,7 @@ return [
     'debug' => (bool) env('APP_DEBUG', false),
 
     /*
+  /*
     |--------------------------------------------------------------------------
     | Application URL
     |--------------------------------------------------------------------------
@@ -55,6 +63,7 @@ return [
     'url' => env('APP_URL', 'http://localhost'),
 
     /*
+  /*
     |--------------------------------------------------------------------------
     | Application Timezone
     |--------------------------------------------------------------------------
@@ -68,6 +77,7 @@ return [
     'timezone' => env('APP_TIMEZONE', 'UTC'),
 
     /*
+  /*
     |--------------------------------------------------------------------------
     | Application Locale Configuration
     |--------------------------------------------------------------------------
@@ -85,6 +95,7 @@ return [
     'faker_locale' => env('APP_FAKER_LOCALE', 'en_US'),
 
     /*
+  /*
     |--------------------------------------------------------------------------
     | Encryption Key
     |--------------------------------------------------------------------------
@@ -106,6 +117,7 @@ return [
     ],
 
     /*
+  /*
     |--------------------------------------------------------------------------
     | Maintenance Mode Driver
     |--------------------------------------------------------------------------
@@ -123,4 +135,82 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'support_email' => 'hello@themeselection.com',
+
+    'datetime_format' => 'd/m/Y H:i',
+    'date_format' => 'd/m/Y',
+
+    'analytics_providers' => json_encode([
+        ["name" => "Google Analytics", "snippet" => ""],
+        ["name" => "PostHog", "snippet" => ""],
+    ]),
+
+    'chatbot_code_snippet' => 'This is a test code snippet',
+
+    // share this
+    'share_this_property_id' => env('SHARE_THIS_PROPERTY_ID'),
+    'share_this_enabled' => env('SHARE_THIS_ENABLED', false),
+
+
+    'social_links' => json_encode([
+        ["title" => 'facebook', "url" => env('SOCIAL_FACEBOOK_URL')],
+        ["title" => 'x', "url" => env('SOCIAL_X_URL')],
+        ["title" => 'linkedin', "url" => env('SOCIAL_LINKEDIN_URL')],
+        ["title" => 'instagram', "url" => env('SOCIAL_INSTAGRAM_URL')],
+        ["title" => 'youtube', "url" => env('SOCIAL_YOUTUBE_URL')],
+        ["title" => 'github', "url" => env('SOCIAL_GITHUB_URL')],
+    ]),
+
+    'oauth_login_providers' => [
+        'google' => true,
+        'facebook' => false,
+        'github' => false,
+        'twitter' => false,
+        'magic_link' => false,
+    ],
+
+    'payment_provider' => 'stripe', // stripe, lemonsqueezy
+    'products' => '', // products data in json format
+
+    'roadmap_enabled' => true,
+    'blog_enabled' => true,
+    'newsletter_enabled' => false,
+
+    // this is the name of the logo file in the public directory
+    'logo' => [
+        'light' => 'images/svg/logo-light.svg',
+        'dark' => 'images/svg/logo-dark.svg',
+    ],
+
+    // Recaptcha
+    'recaptcha_enabled' => env('RECAPTCHA_ENABLED', false),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Autoloaded Service Providers
+    |--------------------------------------------------------------------------
+    |
+    | The service providers listed here will be automatically loaded on the
+    | request to your application. Feel free to add your own services to
+    | this array to grant expanded functionality to your applications.
+    |
+    */
+
+    'providers' => ServiceProvider::defaultProviders()->merge([
+        App\Providers\ConfigProvider::class,
+
+        /*
+    * Application Service Providers...
+    */
+        App\Providers\AppServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\Filament\AdminPanelProvider::class,
+        App\Providers\Filament\DashboardPanelProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
+        App\Providers\NewsLetterServiceProvider::class,
+    ])->toArray(),
+
+    // stripe
+    'stripe_publishable_key' => env('STRIPE_PUBLISHABLE_KEY'),
 ];
