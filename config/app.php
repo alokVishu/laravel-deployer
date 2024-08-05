@@ -4,7 +4,7 @@ use Illuminate\Support\ServiceProvider;
 
 return [
 
-    /*
+  /*
   /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -16,9 +16,9 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+  'name' => env('APP_NAME', 'Laravel'),
 
-    /*
+  /*
   /*
     |--------------------------------------------------------------------------
     | Application Environment
@@ -30,11 +30,11 @@ return [
     |
     */
 
-    'env' => env('APP_ENV', 'production'),
+  'env' => env('APP_ENV', 'production'),
 
-    'description' => env('APP_DESCRIPTION', ''),
+  'description' => env('APP_DESCRIPTION', ''),
 
-    /*
+  /*
   /*
     |--------------------------------------------------------------------------
     | Application Debug Mode
@@ -46,9 +46,9 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+  'debug' => (bool) env('APP_DEBUG', false),
 
-    /*
+  /*
   /*
     |--------------------------------------------------------------------------
     | Application URL
@@ -60,9 +60,9 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+  'url' => env('APP_URL', 'http://localhost'),
 
-    /*
+  /*
   /*
     |--------------------------------------------------------------------------
     | Application Timezone
@@ -74,9 +74,9 @@ return [
     |
     */
 
-    'timezone' => env('APP_TIMEZONE', 'UTC'),
+  'timezone' => env('APP_TIMEZONE', 'UTC'),
 
-    /*
+  /*
   /*
     |--------------------------------------------------------------------------
     | Application Locale Configuration
@@ -88,13 +88,13 @@ return [
     |
     */
 
-    'locale' => env('APP_LOCALE', 'en'),
+  'locale' => env('APP_LOCALE', 'en'),
 
-    'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),
+  'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),
 
-    'faker_locale' => env('APP_FAKER_LOCALE', 'en_US'),
+  'faker_locale' => env('APP_FAKER_LOCALE', 'en_US'),
 
-    /*
+  /*
   /*
     |--------------------------------------------------------------------------
     | Encryption Key
@@ -106,17 +106,17 @@ return [
     |
     */
 
-    'cipher' => 'AES-256-CBC',
+  'cipher' => 'AES-256-CBC',
 
-    'key' => env('APP_KEY'),
+  'key' => env('APP_KEY'),
 
-    'previous_keys' => [
-        ...array_filter(
-            explode(',', env('APP_PREVIOUS_KEYS', ''))
-        ),
-    ],
+  'previous_keys' => [
+    ...array_filter(
+      explode(',', env('APP_PREVIOUS_KEYS', ''))
+    ),
+  ],
 
-    /*
+  /*
   /*
     |--------------------------------------------------------------------------
     | Maintenance Mode Driver
@@ -130,62 +130,62 @@ return [
     |
     */
 
-    'maintenance' => [
-        'driver' => env('APP_MAINTENANCE_DRIVER', 'file'),
-        'store' => env('APP_MAINTENANCE_STORE', 'database'),
-    ],
+  'maintenance' => [
+    'driver' => env('APP_MAINTENANCE_DRIVER', 'file'),
+    'store' => env('APP_MAINTENANCE_STORE', 'database'),
+  ],
 
-    'support_email' => 'hello@themeselection.com',
+  'support_email' => 'hello@themeselection.com',
 
-    'datetime_format' => 'd/m/Y H:i',
-    'date_format' => 'd/m/Y',
+  'datetime_format' => 'd/m/Y H:i',
+  'date_format' => 'd/m/Y',
 
-    'analytics_providers' => json_encode([
-        ["name" => "Google Analytics", "snippet" => ""],
-        ["name" => "PostHog", "snippet" => ""],
-    ]),
+  'analytics_providers' => json_encode([
+    ["name" => "Google Analytics", "snippet" => ""],
+    ["name" => "PostHog", "snippet" => ""],
+  ]),
 
-    'chatbot_code_snippet' => 'This is a test code snippet',
+  'chatbot_code_snippet' => 'This is a test code snippet',
 
-    // share this
-    'share_this_property_id' => env('SHARE_THIS_PROPERTY_ID'),
-    'share_this_enabled' => env('SHARE_THIS_ENABLED', false),
+  // share this
+  'share_this_property_id' => env('SHARE_THIS_PROPERTY_ID'),
+  'share_this_enabled' => env('SHARE_THIS_ENABLED', false),
 
 
-    'social_links' => json_encode([
-        ["title" => 'facebook', "url" => env('SOCIAL_FACEBOOK_URL')],
-        ["title" => 'x', "url" => env('SOCIAL_X_URL')],
-        ["title" => 'linkedin', "url" => env('SOCIAL_LINKEDIN_URL')],
-        ["title" => 'instagram', "url" => env('SOCIAL_INSTAGRAM_URL')],
-        ["title" => 'youtube', "url" => env('SOCIAL_YOUTUBE_URL')],
-        ["title" => 'github', "url" => env('SOCIAL_GITHUB_URL')],
-    ]),
+  'social_links' => json_encode([
+    ["title" => 'facebook', "url" => env('SOCIAL_FACEBOOK_URL')],
+    ["title" => 'x', "url" => env('SOCIAL_X_URL')],
+    ["title" => 'linkedin', "url" => env('SOCIAL_LINKEDIN_URL')],
+    ["title" => 'instagram', "url" => env('SOCIAL_INSTAGRAM_URL')],
+    ["title" => 'youtube', "url" => env('SOCIAL_YOUTUBE_URL')],
+    ["title" => 'github', "url" => env('SOCIAL_GITHUB_URL')],
+  ]),
 
-    'oauth_login_providers' => [
-        'google' => true,
-        'facebook' => false,
-        'github' => false,
-        'twitter' => false,
-        'magic_link' => false,
-    ],
+  'oauth_login_providers' => [
+    'google' => true,
+    'facebook' => false,
+    'github' => false,
+    'twitter' => false,
+    'magic_link' => false,
+  ],
 
-    'payment_provider' => 'stripe', // stripe, lemonsqueezy
-    'products' => '', // products data in json format
+  'payment_provider' => 'stripe', // stripe, lemonsqueezy
+  'products' => '', // products data in json format
 
-    'roadmap_enabled' => true,
-    'blog_enabled' => true,
-    'newsletter_enabled' => false,
+  'roadmap_enabled' => true,
+  'blog_enabled' => true,
+  'newsletter_enabled' => false,
 
-    // this is the name of the logo file in the public directory
-    'logo' => [
-        'light' => 'images/svg/logo-light.svg',
-        'dark' => 'images/svg/logo-dark.svg',
-    ],
+  // this is the name of the logo file in the public directory
+  'logo' => [
+    'light' => 'images/svg/logo-light.svg',
+    'dark' => 'images/svg/logo-dark.svg',
+  ],
 
-    // Recaptcha
-    'recaptcha_enabled' => env('RECAPTCHA_ENABLED', false),
+  // Recaptcha
+  'recaptcha_enabled' => env('RECAPTCHA_ENABLED', false),
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
     |--------------------------------------------------------------------------
@@ -196,21 +196,21 @@ return [
     |
     */
 
-    'providers' => ServiceProvider::defaultProviders()->merge([
-        App\Providers\ConfigProvider::class,
+  'providers' => ServiceProvider::defaultProviders()->merge([
+    App\Providers\ConfigProvider::class,
 
-        /*
+    /*
     * Application Service Providers...
     */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\Filament\AdminPanelProvider::class,
-        App\Providers\Filament\DashboardPanelProvider::class,
-        Spatie\Permission\PermissionServiceProvider::class,
-        App\Providers\NewsLetterServiceProvider::class,
-    ])->toArray(),
+    App\Providers\AppServiceProvider::class,
+    App\Providers\AuthServiceProvider::class,
+    // App\Providers\BroadcastServiceProvider::class,
+    App\Providers\Filament\AdminPanelProvider::class,
+    App\Providers\Filament\DashboardPanelProvider::class,
+    Spatie\Permission\PermissionServiceProvider::class,
+    App\Providers\NewsLetterServiceProvider::class,
+  ])->toArray(),
 
-    // stripe
-    'stripe_publishable_key' => env('STRIPE_PUBLISHABLE_KEY'),
+  // stripe
+  'stripe_publishable_key' => env('STRIPE_PUBLISHABLE_KEY'),
 ];
