@@ -1,0 +1,3 @@
+<p>
+  Checkout cancelled
+</p>

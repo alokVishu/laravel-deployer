@@ -1,0 +1,207 @@
+/* stylelint-disable scss/at-rule-no-unknown */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// social btn
+.btn-youtube {
+  @apply bg-opacity-20 bg-error text-error border-opacity-0 border-error shadow-none;
+
+  &:hover {
+    @apply bg-error bg-opacity-30 border-error border-opacity-0 shadow-none;
+  }
+}
+
+.btn-facebook {
+  @apply bg-opacity-20 bg-accent text-accent border-opacity-0 border-accent shadow-none;
+
+  &:hover {
+    @apply bg-accent bg-opacity-30 border-accent border-opacity-0 shadow-none;
+  }
+}
+
+.btn-twitter {
+  @apply bg-opacity-20 bg-info text-info border-opacity-0 border-info shadow-none;
+
+  &:hover {
+    @apply bg-info bg-opacity-30 border-info border-opacity-0 shadow-none;
+  }
+}
+
+.btn-x {
+  @apply bg-opacity-20 bg-black text-black border-opacity-0 border-black shadow-none;
+
+  &:hover {
+    @apply bg-black bg-opacity-30 border-black border-opacity-0 shadow-none;
+  }
+}
+
+.btn-linkedin {
+  @apply bg-opacity-20 bg-blue-500 text-blue-500 border-opacity-0 border-blue-500 shadow-none;
+
+  &:hover {
+    @apply bg-blue-500 bg-opacity-30 border-blue-500 border-opacity-0 shadow-none;
+  }
+}
+
+.btn-instagram {
+  @apply bg-opacity-20 bg-primary text-primary border-opacity-0 border-primary shadow-none;
+
+  &:hover {
+    @apply bg-primary bg-opacity-30 border-primary border-opacity-0 shadow-none;
+  }
+}
+
+.btn-github {
+  @apply bg-opacity-20 bg-gray-500 text-base-content border-opacity-0 border-gray-500 shadow-none;
+
+  &:hover {
+    @apply bg-gray-500 bg-opacity-30 border-gray-500 border-opacity-0 shadow-none;
+  }
+}
+
+.btn-discord {
+  @apply bg-opacity-20 bg-accent text-accent border-opacity-0 border-accent shadow-none;
+
+  &:hover {
+    @apply bg-accent bg-opacity-30 border-accent border-opacity-0 shadow-none;
+  }
+}
+
+.text-fill-transparent {
+  -webkit-text-fill-color: transparent;
+}
+
+.text-underlined-primary {
+  background: linear-gradient(90deg, rgba(121, 77, 255, 40%) 0%, rgba(121, 77, 255, 0%) 100%);
+}
+
+.section-divider {
+  background: linear-gradient(90deg, rgba(146, 149, 179, 0%) 0%, rgba(146, 149, 179, 18%) 50%, rgba(146, 149, 179, 0%) 100%);
+}
+
+// Animations
+.flip-icon-animation {
+  .flip-icon {
+    animation: 2s cubic-bezier(0.76, 0.01, 0.34, 1) 0s infinite normal none running dollar-animation;
+    transform: translateY(6px);
+  }
+}
+
+// Container class for centering the content in the middle
+.container {
+  @apply mx-auto px-6;
+}
+
+@keyframes dollar-animation {
+  50% {
+    transform: translateY(-5px) matrix(-1, 0, 0, 1, 0, 0);
+  }
+}
+
+// slide in animation
+.slide-in {
+  animation: slide-in 1.5s ease-out forwards;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+// Base Layer
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-base-content/90;
+  }
+
+  h1 {
+    @apply text-4xl font-semibold;
+  }
+
+  h2 {
+    @apply text-3xl font-semibold;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold;
+  }
+
+  h4 {
+    @apply text-xl font-semibold;
+  }
+
+  h5 {
+    @apply text-lg font-semibold;
+  }
+
+  h6 {
+    @apply text-base font-semibold;
+  }
+}
+
+@layer utilities {
+  .bg-card {
+    background-color: rgba(var(--card-bg), var(--tw-bg-opacity, 1));
+  }
+
+  .border-card {
+    border-color: rgba(var(--card-bg), var(--tw-border-opacity, 1));
+  }
+}
+
+.enhanced-scrollbar {
+  @apply [&::-webkit-scrollbar-track]:bg-base-200 [&::-webkit-scrollbar-thumb]:bg-secondary/50 hover:[&::-webkit-scrollbar-thumb]:bg-secondary/80  [&::-webkit-scrollbar]:w-2;
+}
+
+// code
+code {
+  @apply bg-base-200 text-base-content rounded p-1;
+}
+
+// table of content
+.toc-level-h2 {
+  @apply ms-4;
+}
+
+.toc-level-h3 {
+  @apply ms-8;
+}
+
+.toc-level-h4 {
+  @apply ms-12;
+}
+
+.toc-level-h5 {
+  @apply ms-16;
+}
+
+.toc-level-h6 {
+  @apply ms-20;
+}
+
+.scroll-anchor {
+  scroll-margin-block-start: 4rem;
+}
+
+.pricing-table {
+  &.table :where(thead, tbody) :where(tr:not(:last-child)),
+  &.table :where(thead, tbody) :where(tr:first-child:last-child) {
+    @apply border-base-content/10;
+  }
+}
+
+.grid-item {
+  inline-size: 300px;
+  margin-block-end: 1.5rem;
+}
